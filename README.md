@@ -223,16 +223,6 @@ GROQ_API_KEY=your_api_key_here
 - Check Groq quota on console.groq.com
 - Ensure API key has appropriate permissions
 
-### Port Already in Use
-```bash
-# Windows - Kill process on port 8000
-netstat -ano | findstr :8000
-taskkill /PID <PID> /F
-
-# macOS/Linux
-lsof -ti:8000 | xargs kill -9
-```
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please:
@@ -249,8 +239,8 @@ This project is licensed under the MIT License - see LICENSE file for details.
 ## 👨‍💻 Author
 
 **Your Name/Team**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- GitHub: [@Bitusahu2006](https://github.com/Bitusahu2006)
+- LinkedIn: [Bitu Sahu]([www.linkedin.com/in/bitu-sahu-68b412334](https://www.linkedin.com/in/bitu-sahu-68b412334/))
 
 ## 🙏 Acknowledgments
 
