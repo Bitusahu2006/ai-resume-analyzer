@@ -1,0 +1,2038 @@
+/* ============================================
+   GLOBAL STYLES - NEUMORPHISM
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-base: #e8eef5;
+    --bg-light: #f5f8fd;
+    --bg-dark: #d8dfe8;
+    --shadow-dark: 9px 9px 18px #c5d0e0;
+    --shadow-light: -9px -9px 18px #ffffff;
+    --shadow-inset-dark: inset 6px 6px 12px #c5d0e0;
+    --shadow-inset-light: inset -6px -6px 12px #ffffff;
+    --primary-color: #667eea;
+    --primary-light: #8b9eeb;
+    --secondary-color: #764ba2;
+    --accent-color: #2ecc71;
+    --accent-light: #56d87b;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --danger-color: #e74c3c;
+    --white: #ffffff;
+    --border-color: #d0d5e0;
+    --shadow-sm: 4px 4px 8px #c5d0e0, -4px -4px 8px #ffffff;
+    --shadow-md: 6px 6px 14px #c5d0e0, -6px -6px 14px #ffffff;
+    --shadow-lg: 10px 10px 24px #c5d0e0, -10px -10px 24px #ffffff;
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ============================================
+   NAVBAR - NEUMORPHISM
+   ============================================ */
+.navbar {
+    background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-auth {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-user {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.user-name {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.login-btn {
+    background: var(--bg-base);
+    color: var(--primary-color);
+}
+
+.signup-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+}
+
+.logout-btn {
+    background: #ff6b6b;
+}
+
+.overleaf-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.overleaf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover:after {
+    width: 100%;
+}
+
+/* ============================================
+   HERO SECTION - NEUMORPHISM
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    color: var(--text-primary);
+    padding: 120px 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* ============================================
+   BUTTONS - NEUMORPHISM
+   ============================================ */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: none;
+    padding: 16px 48px;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    background: var(--bg-light);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* ============================================
+   CONTAINER & SECTIONS
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.6s ease;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   FEATURES SECTION - NEUMORPHISM
+   ============================================ */
+.features-section {
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg-base) 100%);
+    padding: 5rem 2rem;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: white;
+    box-shadow: 8px 8px 16px rgba(102, 126, 234, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.5);
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Feature card highlight for templates */
+.feature-card.feature-highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.feature-card.feature-highlight:hover {
+    border-color: white;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.feature-card.feature-highlight h3 {
+    color: white;
+}
+
+.feature-card.feature-highlight p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.feature-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.feature-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+    border-color: white;
+}
+
+.preview-link {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.preview-link:hover {
+    color: var(--secondary-color) !important;
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+/* ============================================
+   ANALYZER SECTION - NEUMORPHISM
+   ============================================ */
+.analyzer-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .analyzer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.sidebar-card {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: none;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.sidebar-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+}
+
+.sidebar-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.sidebar-card > p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    font-weight: 500;
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: var(--shadow-md);
+    background: var(--bg-light);
+}
+
+/* File Upload */
+.file-upload {
+    border: 2px dashed var(--primary-color);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.file-upload:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.file-label i {
+    font-size: 2rem;
+}
+
+.tip {
+    background: var(--bg-base);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: var(--shadow-inset-dark);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    border: none;
+}
+
+/* Main Content */
+.main-content {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   RESULTS SECTION - NEUMORPHISM
+   ============================================ */
+.results-container {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.score-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border-radius: 30px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    border: none;
+}
+
+.score-card h3 {
+    margin-bottom: 1.5rem;
+    color: var(--white);
+}
+
+.score-display {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+}
+
+.score-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 8;
+}
+
+.score-fill {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.score-text {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.score-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.score-label {
+    font-size: 1.5rem;
+}
+
+.score-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Skills Overview */
+.skills-overview {
+    margin-bottom: 2rem;
+    background: var(--bg-base);
+    border-radius: 30px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    border: none;
+}
+
+.skills-overview h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skill-badge {
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 0.95rem;
+    border: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.skill-matched {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-matched:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.skill-missing {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.skill-missing:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Charts */
+.charts-section {
+    margin: 2rem 0;
+}
+
+.charts-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.chart-card {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border: none;
+    transition: var(--transition);
+}
+
+.chart-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+}
+
+/* Resume Preview */
+.resume-preview {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--bg-base);
+    border-radius: 30px;
+    border-left: 4px solid var(--primary-color);
+    border: none;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    color: var(--text-primary);
+}
+
+.resume-preview h3 {
+    margin-bottom: 1rem;
+}
+
+.preview-box {
+    background: var(--bg-light);
+    border: none;
+    padding: 1rem;
+    border-radius: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: var(--shadow-inset-dark), var(--shadow-inset-light);
+}
+
+/* AI Suggestions */
+.ai-suggestions {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-base);
+    border-radius: 30px;
+    border-left: 4px solid var(--accent-color);
+    border: none;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    color: var(--text-primary);
+}
+
+.ai-suggestions h3 {
+    margin-bottom: 0.5rem;
+}
+
+.ai-suggestions p {
+    margin-bottom: 1rem;
+}
+
+.suggestions-content {
+    background: var(--bg-light);
+    border: none;
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-inset-dark), var(--shadow-inset-light);
+}
+
+/* ============================================
+   OVERLEAF SECTION - NEUMORPHISM
+   ============================================ */
+.overleaf-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 30px;
+    border: none;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    color: var(--text-primary);
+}
+
+.overleaf-section h3 {
+    margin-bottom: 0.5rem;
+}
+
+.overleaf-section p {
+    margin-bottom: 1rem;
+}
+
+/* LaTeX Modal */
+.modal-lg {
+    max-width: 900px;
+}
+
+.modal-code {
+    padding: 2rem;
+}
+
+/* Full-Screen Overleaf Section */
+.overleaf-full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    z-index: 1000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.overleaf-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+.overleaf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+    box-shadow: var(--shadow-md);
+}
+
+.overleaf-title h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.overleaf-title p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.close-btn-large {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.close-btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.overleaf-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.column-left, .column-right {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.column-left h3, .column-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.column-left p, .column-right p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.format-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.format-option {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    background: var(--bg-light);
+    border-radius: 15px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.format-option:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-base) 100%);
+    transform: translateX(5px);
+}
+
+.format-option input[type="radio"] {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.format-option span {
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.format-option small {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.format-option input[type="radio"]:checked + span {
+    color: var(--primary-color);
+}
+
+.format-tips {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.format-tips h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.format-tips ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.format-tips li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.latex-textarea {
+    width: 100%;
+    height: 550px;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-inset-dark), var(--shadow-inset-light);
+    resize: vertical;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.latex-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: inset 0 0 8px rgba(102, 126, 234, 0.2);
+}
+
+.code-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.code-buttons .btn-primary,
+.code-buttons .btn-secondary {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .overleaf-content {
+        grid-template-columns: 1fr;
+    }
+
+    .overleaf-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .close-btn-large {
+        align-self: flex-start;
+    }
+
+    .latex-textarea {
+        height: 400px;
+    }
+
+    .overleaf-title h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ============================================
+   FEEDBACK SECTION - NEUMORPHISM
+   ============================================ */
+.feedback-section {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-lg);
+    border: none;
+    margin: 3rem 0;
+}
+
+.feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+textarea {
+    resize: vertical;
+    font-family: inherit;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 20px;
+    padding: 14px 18px;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: var(--shadow-md);
+    background: var(--bg-light);
+}
+
+.rating-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rating-slider {
+    flex: 1;
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(231, 76, 60, 0.6), rgba(243, 156, 18, 0.6), rgba(46, 204, 113, 0.6));
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.rating-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.rating-value {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 80px;
+}
+
+/* ============================================
+   MODALS - NEUMORPHISM
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-radius: 30px;
+    padding: 3rem;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+    padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 800;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.modal-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.modal-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.modal-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--text-primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border: none;
+}
+
+/* ============================================
+   TOAST NOTIFICATION - NEUMORPHISM
+   ============================================ */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    color: var(--white);
+    font-weight: 500;
+    box-shadow: var(--shadow-dark), var(--shadow-light);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: var(--transition);
+    z-index: 1000;
+    max-width: 300px;
+    border: none;
+}
+
+.toast.success {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.9), rgba(86, 171, 47, 0.9));
+}
+
+.toast.error {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(201, 42, 42, 0.9));
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(102, 126, 234, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   TEMPLATE SELECTION - NEUMORPHISM
+   ============================================ */
+.template-selection {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 20px 20px 0 0;
+}
+
+.template-selection h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.template-selection > p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.templates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.template-card {
+    background: linear-gradient(135deg, var(--bg-base) 0%, var(--bg-light) 100%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.template-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: var(--transition);
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.template-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.template-card input[type="radio"] {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.template-preview {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 12px;
+    margin-bottom: 1rem;
+    height: 120px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+.modern-preview {
+    background: linear-gradient(135deg, #f8f9fc 0%, #ffffff 100%);
+    color: var(--text-primary);
+}
+
+.classic-preview {
+    background: var(--white);
+    color: var(--text-primary);
+    border-left: 3px solid #333;
+    padding-left: 10px;
+}
+
+.creative-preview {
+    background: linear-gradient(135deg, #007bff33 0%, #007bff11 100%);
+    color: #007bff;
+}
+
+.minimal-preview {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+.template-card h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+.template-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.template-card input[type="radio"]:checked + .template-preview {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.template-card input[type="radio"]:checked ~ h4 {
+    color: var(--primary-color);
+}
+
+.template-card input[type="radio"]:checked ~ .template-badge {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+    .score-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* ============================================
+   SCROLLBAR - NEUMORPHISM
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+/* ============================================
+   SIDEBAR TABS - INPUT MODE SELECTION
+   ============================================ */
+.sidebar-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    background: var(--bg-light);
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-inset-dark);
+}
+
+.tab-btn-sidebar {
+    flex: 1;
+    padding: 10px 12px;
+    border: none;
+    background: var(--bg-base);
+    color: var(--text-secondary);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn-sidebar:hover {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-btn-sidebar.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    box-shadow: 4px 4px 10px rgba(102, 126, 234, 0.3), -4px -4px 10px rgba(255, 255, 255, 0.6);
+}
+
+.input-mode {
+    display: none;
+}
+
+.input-mode.active {
+    display: block;
+}
+
+/* ============================================
+   RESUME INPUT FORM SECTION
+   ============================================ */
+.form-section {
+    animation: slideDown 0.3s ease-out;
+}
+
+.resume-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-fieldset {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.form-fieldset:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.form-fieldset legend {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row:last-child {
+    margin-bottom: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.form-control {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-inset-dark);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: var(--shadow-inset-light), 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Education, Experience, Projects, Certifications Items */
+.education-item,
+.experience-item,
+.project-item,
+.cert-item {
+    background: var(--bg-base);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.education-item:last-child,
+.experience-item:last-child,
+.project-item:last-child,
+.cert-item:last-child {
+    margin-bottom: 0;
+}
+
+.btn-small {
+    padding: 10px 16px;
+    font-size: 13px;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-top: 20px;
+}
+
+/* ============================================
+   LATEX OUTPUT SECTION
+   ============================================ */
+.latex-output-section {
+    animation: slideDown 0.3s ease-out;
+}
+
+.latex-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.latex-code-display {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid #333;
+}
+
+.latex-code-display pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    background: #1e1e1e;
+}
+
+.latex-code-display code {
+    color: #d4d4d4;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Copy Animation */
+@keyframes copySuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.copy-success {
+    animation: copySuccess 0.3s ease-out;
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive - Form Layout */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .latex-controls {
+        flex-direction: column;
+    }
+
+    .latex-controls button {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   NEW FEATURES - Links, Projects, Certifications
+   ============================================ */
+
+.btn-small {
+    padding: 8px 12px !important;
+    font-size: 0.85rem;
+    border-radius: 10px !important;
+}
+
+.separator {
+    margin: 1.5rem 0;
+    background: var(--border-color);
+}
+
+#projectsList > div,
+#certificationsList > div {
+    position: relative;
+}
+
+.project-card,
+.cert-card {
+    border-left: 3px solid var(--primary-color);
+    padding: 12px;
+    margin: 10px 0;
+    background: var(--bg-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.project-card:hover,
+.cert-card:hover {
+    box-shadow: var(--shadow-md);
+    background: var(--bg-base);
+}
+
+.project-card strong,
+.cert-card strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Optimization Report Styles */
+.optimization-report {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.report-section {
+    margin-bottom: 1.5rem;
+}
+
+.report-section h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.report-item {
+    padding: 10px;
+    margin: 8px 0;
+    border-left: 3px solid var(--secondary-color);
+    background: var(--bg-base);
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+.report-item.warning {
+    border-left-color: #f39c12;
+    background: rgba(243, 156, 18, 0.05);
+}
+
+.report-item.success {
+    border-left-color: #27ae60;
+    background: rgba(39, 174, 96, 0.05);
+}
+
+.report-item.error {
+    border-left-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.05);
+}
+
+/* Categorized Skills Display */
+.skills-category {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.skills-category-item {
+    padding: 1rem;
+    background: var(--bg-base);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.skills-category-item strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.skills-category-item span {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Links Display */
+.links-section {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.links-section a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.links-section a:hover {
+    text-decoration: underline;
+}
+
+/* Projects Showcase */
+.projects-showcase {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.project-item {
+    background: var(--bg-base);
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.project-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-metrics {
+    background: var(--bg-light);
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* Certifications Showcase */
+.certifications-showcase {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cert-item {
+    background: var(--bg-base);
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    border-left-color: #f39c12;
+}
+
+.cert-item h5 {
+    color: #d35400;
+    margin-bottom: 0.5rem;
+}
+
+.cert-meta {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}

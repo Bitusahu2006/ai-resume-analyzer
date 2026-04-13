@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Preview - AI Resume Analyzer</title>
+    <link rel="stylesheet" href="css/preview-styles.css">
+</head>
+<body>
+    <div class="preview-container">
+        <!-- Header -->
+        <header class="preview-header">
+            <div class="header-content">
+                <h1>📄 Resume Templates Preview</h1>
+                <p>View resume templates and PDFs</p>
+            </div>
+
+            <!-- Template Selector -->
+            <div class="template-selector">
+                <button class="template-btn active" data-template="modern">
+                    <span class="btn-title">Modern</span>
+                    <span class="btn-subtitle">Contemporary</span>
+                </button>
+                <button class="template-btn" data-template="classic">
+                    <span class="btn-title">Classic</span>
+                    <span class="btn-subtitle">Professional</span>
+                </button>
+                <button class="template-btn" data-template="creative">
+                    <span class="btn-title">Creative</span>
+                    <span class="btn-subtitle">Colored</span>
+                </button>
+                <button class="template-btn" data-template="minimal">
+                    <span class="btn-title">Minimal</span>
+                    <span class="btn-subtitle">Clean</span>
+                </button>
+            </div>
+
+            <!-- Back Button -->
+            <a href="index.html" class="back-btn">← Back to Main</a>
+        </header>
+
+        <!-- Main Content - Split View -->
+        <main class="split-view">
+            <!-- Left Panel: PDF Viewer -->
+            <section class="pdf-panel">
+                <div class="panel-header">
+                    <h2>📕 Resume PDF</h2>
+                    <button class="download-btn" id="downloadPdfBtn" title="Download PDF">
+                        ⬇️ Download PDF
+                    </button>
+                </div>
+                <div class="pdf-container">
+                    <div id="pdfViewer" class="pdf-viewer">
+                        <iframe id="pdfFrame" width="100%" height="100%" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <!-- Status Messages -->
+        <div id="statusMessage" class="status-message"></div>
+    </div>
+
+    <!-- Modals -->
+    <div id="loadingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <p>Loading template...</p>
+        </div>
+    </div>
+
+    <script src="js/preview.js"></script>
+</body>
+</html>

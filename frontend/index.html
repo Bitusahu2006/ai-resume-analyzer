@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer - Professional Resume Optimization</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>AI Resume Analyzer</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#analyzer">Analyzer</a></li>
+                <li><a href="preview.html" class="preview-link">📄 Templates</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+            <div class="nav-auth" id="nav-auth">
+                <button class="nav-btn login-btn" onclick="openLoginModal()">Login</button>
+                <button class="nav-btn signup-btn" onclick="openSignupModal()">Sign Up</button>
+            </div>
+            <div class="nav-user" id="nav-user" style="display: none;">
+                <span class="user-name" id="user-name"></span>
+                <button class="nav-btn logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>🚀 AI Resume Analyzer</h1>
+            <p>Optimize your resume for ATS and increase your job selection chances with AI-powered insights</p>
+            <button class="btn-primary" onclick="scrollToAnalyzer()">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>✨ Powerful Features</h2>
+                <p>Everything you need to create a job-winning resume</p>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>ATS Compatibility Score</h3>
+                    <p>Get an instant score showing how well your resume matches Applicant Tracking Systems used by recruiters</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Skills Matching</h3>
+                    <p>Automatically detect matched and missing skills for your target job role with detailed insights</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wand-magic-wand"></i>
+                    </div>
+                    <h3>AI-Powered Suggestions</h3>
+                    <p>Get intelligent recommendations powered by Groq AI to improve your resume and land better jobs</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Resume Preview</h3>
+                    <p>See a preview of your resume content with key sections highlighted for better visibility</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Visual Analytics</h3>
+                    <p>Visualize your skills profile and ATS compatibility breakdown with interactive charts</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your resume data is encrypted and secure. Only you have access to your analysis results</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container" id="dashboardContainer" style="display: block;">
+        <!-- Analyzer Section -->
+        <section id="analyzer" class="analyzer-section">
+            <div class="section-header">
+                <h2>📊 Resume Analysis</h2>
+                <p>Upload your resume to get instant ATS score and AI suggestions</p>
+            </div>
+
+            <div class="analyzer-grid">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>📋 Upload & Analyze</h3>
+                        <p>Upload your resume and get AI-powered analysis</p>
+                        
+                        <div class="form-group">
+                            <label for="resumeFile">📄 Upload Resume</label>
+                            <div class="file-upload">
+                                <input type="file" id="resumeFile" accept=".pdf,.doc,.docx,.txt" class="file-input">
+                                <div class="file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Drop resume here or click to upload</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobRole">💼 Select Job Role</label>
+                            <select id="jobRole" class="form-control">
+                                <option value="">Loading job roles...</option>
+                            </select>
+                        </div>
+
+                        <button id="analyzeBtn" class="btn-primary btn-full" onclick="analyzeResume()">
+                            <i class="fas fa-chart-pie"></i> Analyze Resume
+                        </button>
+
+                        <div class="separator" style="height: 1px; background: var(--border-color); margin: 1.5rem 0;"></div>
+
+                        <button class="btn-primary btn-full" onclick="optimizeComplete()">
+                            <i class="fas fa-magic"></i> Complete Optimization
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="main-content">
+                    <!-- Analysis Results (Visible) -->
+                    <div id="resultsContainer" class="results-container" style="display: block;">
+                        <!-- ATS Score Card -->
+                        <div class="score-card">
+                            <h3>🎯 ATS Compatibility Score</h3>
+                            <div class="score-display">
+                                <svg viewBox="0 0 100 100" class="score-circle">
+                                    <circle cx="50" cy="50" r="45" class="score-bg"></circle>
+                                    <circle cx="50" cy="50" r="45" class="score-fill" id="scoreFill"></circle>
+                                </svg>
+                                <div class="score-text">
+                                    <span id="scoreValue" class="score-number">0</span>
+                                    <span class="score-label">%</span>
+                                </div>
+                            </div>
+                            <p id="scoreMessage" class="score-message"></p>
+                        </div>
+
+                        <!-- Skills Overview -->
+                        <div class="skills-overview">
+                            <h3>✅ Skills Overview</h3>
+                            <div class="tabs">
+                                <button class="tab-btn active" data-tab="matched">Matched Skills</button>
+                                <button class="tab-btn" data-tab="missing">Missing Skills</button>
+                            </div>
+
+                            <div id="matched" class="tab-content active">
+                                <div id="matchedSkills" class="skills-list"></div>
+                            </div>
+
+                            <div id="missing" class="tab-content">
+                                <div id="missingSkills" class="skills-list"></div>
+                            </div>
+                        </div>
+
+                        <!-- Charts Section -->
+                        <div class="charts-section">
+                            <h3>📈 Visual Analytics</h3>
+                            <div class="charts-grid">
+                                <div class="chart-card">
+                                    <canvas id="skillsChart"></canvas>
+                                </div>
+                                <div class="chart-card">
+                                    <canvas id="breakdownChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resume Preview -->
+                        <div class="resume-preview">
+                            <h3>📄 Resume Preview</h3>
+                            <div class="preview-box">
+                                <p id="resumePreview"></p>
+                            </div>
+                        </div>
+
+                        <!-- AI Suggestions -->
+                        <div class="ai-suggestions">
+                            <h3>💡 AI-Powered Suggestions</h3>
+                            <p>Get personalized suggestions to improve your resume for this role</p>
+                            <button id="suggestionsBtn" class="btn-secondary" onclick="getSuggestions()">
+                                <i class="fas fa-wand-magic-wand"></i> Generate Suggestions
+                            </button>
+                            <div id="suggestionsContent" class="suggestions-content"></div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>No Resume Uploaded Yet</h3>
+                        <p>Upload a PDF resume to get started with AI analysis</p>
+                    </div>
+                </main>
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="feedback-section">
+            <div class="section-header">
+                <h2>💬 Help Us Improve</h2>
+                <p>Your feedback helps us enhance the AI Resume Analyzer for everyone</p>
+            </div>
+
+            <div class="feedback-form">
+                <div class="form-group">
+                    <label for="feedbackText">Share Your Feedback</label>
+                    <textarea id="feedbackText" class="form-control" rows="5" placeholder="Tell us what you think..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rate This Tool</label>
+                    <div class="rating-input">
+                        <input type="range" id="rating" min="1" max="5" value="3" class="rating-slider">
+                        <span id="ratingValue" class="rating-value">3 ⭐</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="submitFeedback()">
+                    <i class="fas fa-paper-plane"></i> Submit Feedback
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>🚀 AI Resume Analyzer | Powered by Groq AI | © 2026 All Rights Reserved</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sign In</h2>
+                <button class="close-btn" onclick="closeLoginModal()">&times;</button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Sign In</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" onclick="switchToSignup(event)">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Account</h2>
+                <button class="close-btn" onclick="closeSignupModal()">&times;</button>
+            </div>
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" placeholder="Min 6 characters" minlength="6" required>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" onclick="switchToLogin(event)">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/new-features.js"></script>
+</body>
+</html>
