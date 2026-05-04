@@ -238,8 +238,9 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 ## 👨‍💻 Author
 
-**Your Name/Team**
+**My Team**
 - GitHub: [@Bitusahu2006](https://github.com/Bitusahu2006)
+- GitHub: [@annukashyup](https://github.com/annukashyup)
 - LinkedIn: [Bitu Sahu]([www.linkedin.com/in/bitu-sahu-68b412334](https://www.linkedin.com/in/bitu-sahu-68b412334/))
 
 ## 🙏 Acknowledgments
